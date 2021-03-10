@@ -33,21 +33,21 @@ class Bank {
 		this.customerName = cname;
 	}
 
-	void deposit(int amount) {
+	public void deposit(int amount) {
 		if (amount != 0) {
 			balance = balance + amount;
 			previousTransaction = amount;
 		}
 	}
 
-	void withdraw(int amount) {
+	public void withdraw(int amount) {
 		if (amount != 0) {
 			balance = balance - amount;
 			previousTransaction = -amount;
 		}
 	}
 
-	void getPreviousTransaction() {
+	public void getPreviousTransaction() {
 
 		if (previousTransaction > 0) {
 			System.out.println("Deposited:- " + previousTransaction);
@@ -58,7 +58,7 @@ class Bank {
 		}
 	}
 
-	void showMenu() {
+	public void showMenu() {
 
 		char option = '\0';
 		Scanner scan = new Scanner(System.in);
@@ -107,13 +107,14 @@ class Bank {
 
 			case 'D':
 				System.out.println("==========================");
+	                        System.out.println("Checking Previous Transactions:-");
 				getPreviousTransaction();
 				System.out.println("==========================");
 				System.out.println("\n");
 				break;
 
 			case 'E':
-				System.out.println("Exiting from the Bank Application");
+				System.out.println("Exiting from the Bank Application!!");
 				break;
 
 			default:
